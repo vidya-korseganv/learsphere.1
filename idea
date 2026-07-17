@@ -1,0 +1,527 @@
+Frontend Assignment: LearnSphere – Responsive Learning Platform
+1. Project Overview
+You are required to design and develop a responsive frontend application called LearnSphere, an online learning platform where students can explore courses, view their learning progress, filter courses, and manage their learning dashboard.
+The main purpose of this project is to practice Tailwind CSS with React and apply the concepts learned during the training session.
+This is a frontend-only project. No backend, database, authentication API, or external API integration is required.
+
+2. Problem Statement
+Online learning platforms contain different types of information such as available courses, student progress, course categories, learning statistics, and user information.
+Your task is to build a modern and responsive Student Learning Dashboard that provides this information in a clean and user-friendly interface.
+The application should work properly across:
+• Mobile devices
+• Tablets
+• Laptops
+• Desktop screens
+The main challenge is to build the complete user interface using Tailwind CSS utility classes while maintaining responsive design, reusable React components, and clean code.
+
+3. Technology Requirements
+The following technologies must be used:
+• React.js
+• Vite
+• Tailwind CSS
+• JavaScript
+Optional:
+• React Icons
+• Google Fonts
+You are not allowed to use UI frameworks such as:
+• Bootstrap
+• Material UI
+• Chakra UI
+• Ant Design
+The objective is to build the UI using Tailwind CSS.
+
+4. Application Requirements
+The application must contain the following sections.
+A. Responsive Navigation Bar
+Create a navigation bar at the top of the application.
+The navbar must contain:
+• Application logo/name: LearnSphere
+• Home
+• Explore Courses
+• My Learning
+• Profile
+• Search icon
+• User profile/avatar
+Desktop Requirement
+On desktop screens, all navigation links should be visible horizontally.
+Expected structure:
+LearnSphere | Home | Explore | My Learning | Profile
+Mobile Requirement
+On smaller screens:
+• Navigation links should not take unnecessary horizontal space.
+• A mobile-friendly navigation approach should be implemented.
+• The layout should remain clean and usable.
+Concepts to Practice
+• Flexbox
+• justify-*
+• items-*
+• gap-*
+• Responsive utilities
+• hidden
+• block
+• md:flex
+• md:hidden
+
+5. Hero / Welcome Section
+Create a welcome section below the navbar.
+The section should display:
+Welcome Back, Student!
+Add a short message such as:
+"Continue learning and achieve your goals."
+Include one call-to-action button:
+Explore Courses
+You may also add an illustration or image.
+Responsive Requirement
+On mobile devices:
+Content and image should appear vertically.
+On larger screens:
+Content and image should appear horizontally.
+Concepts to Practice
+• flex
+• flex-col
+• md:flex-row
+• Responsive spacing
+• Typography
+• Background colors
+• Border radius
+• Buttons
+
+6. Learning Statistics Section
+Create four statistics cards.
+The cards should display:
+1. Total Courses
+2. Completed Courses
+3. Courses In Progress
+4. Certificates Earned
+Each card should contain:
+• An icon
+• A number
+• A title
+Example:
+12
+ Total Courses
+Responsive Requirement
+Mobile:
+1 card per row
+Tablet:
+2 cards per row
+Large screen:
+4 cards per row
+Concepts to Practice
+• CSS Grid
+• Responsive Grid
+• grid-cols-*
+• gap-*
+• Padding
+• Shadows
+• Border radius
+• Hover effects
+
+7. Course Search Section
+Create a search input where users can search for courses.
+Example placeholder:
+"Search for courses..."
+The search feature should work using React state.
+If the user searches:
+"React"
+Only courses containing "React" in their title should be displayed.
+Requirements
+• Search should be case-insensitive.
+• Course cards should update when the search text changes.
+• Display a message when no matching courses are found.
+Example:
+"No courses found."
+Concepts to Practice
+• React useState
+• Array filter()
+• Tailwind input styling
+• Responsive width
+• Focus states
+
+8. Course Category Filters
+Create category filter buttons.
+Required categories:
+• All
+• Development
+• Cloud
+• Design
+• DevOps
+When a user selects a category, only courses belonging to that category should be displayed.
+The selected category button should have a different style.
+Example:
+Selected:
+Blue background + white text
+Not selected:
+Light background + dark text
+Concepts to Practice
+• React state
+• Conditional Tailwind classes
+• Flexbox
+• flex-wrap
+• Hover states
+• Active states
+
+9. Course Data
+Create at least 8 courses.
+Each course object should contain:
+• ID
+• Title
+• Description
+• Category
+• Image
+• Progress
+• Status
+Example data structure:
+{
+  id: 1,
+  title: "React for Beginners",
+  description: "Learn the fundamentals of React.",
+  category: "Development",
+  image: "course-image-url",
+  progress: 65,
+  status: "In Progress"
+}
+Required course categories should include:
+• Development
+• Cloud
+• Design
+• DevOps
+Required statuses:
+• Completed
+• In Progress
+• Not Started
+
+10. Course Cards
+Create a reusable CourseCard React component.
+Every card should display:
+• Course image
+• Course category
+• Course title
+• Short description
+• Course status
+• Progress percentage
+• Progress bar
+• Action button
+Example:
+React for Beginners
+Development
+Learn the fundamentals of React and build modern web applications.
+Status: In Progress
+Progress: 65%
+[ Continue Learning ]
+Responsive Grid
+Mobile:
+1 course per row
+Tablet:
+2 courses per row
+Desktop:
+3 courses per row
+Concepts to Practice
+• React components
+• Props
+• CSS Grid
+• Responsive design
+• Utility classes
+• Hover effects
+• Shadows
+• Transitions
+
+11. Conditional Course Status Styling
+Course status should have different styles.
+Example:
+Completed → Green
+In Progress → Yellow
+Not Started → Gray
+Students should implement the status using conditional Tailwind classes.
+Recommended approach:
+const statusStyles = {
+  Completed: "bg-green-100 text-green-700",
+  "In Progress": "bg-yellow-100 text-yellow-700",
+  "Not Started": "bg-gray-100 text-gray-700"
+};
+Students should avoid creating Tailwind classes dynamically like:
+`bg-${color}-500`
+The complete Tailwind class names should be available directly in the source code.
+
+12. Progress Bar
+Every course should display a visual progress bar.
+Example:
+React Course
+65%
+█████████████░░░░░░
+The progress bar should represent the course progress.
+Examples:
+0% → Empty
+50% → Half filled
+100% → Fully filled
+Students should decide how to implement the progress width safely while keeping the Tailwind styling maintainable.
+
+13. Custom Theme
+Create a consistent design system for the application.
+Define and use:
+• Primary brand color
+• Secondary color
+• Heading font
+• Body font
+• Custom spacing if required
+The same design system should be followed throughout the application.
+Students should not randomly use unrelated colors in different sections.
+Example design:
+Primary: Blue
+Secondary: Purple
+Success: Green
+Warning: Yellow
+
+14. Custom Font
+Add at least one custom font to the application.
+Examples:
+• Poppins
+• Inter
+• Montserrat
+• Roboto
+Use the custom font consistently.
+For example:
+Heading → Poppins
+Body → Inter
+Students should be able to explain during the demo how the custom font was added and used.
+
+15. My Learning Section
+Create a section called:
+Continue Learning
+Display only courses where the status is:
+"In Progress"
+Show a minimum of three courses if your sample data allows it.
+This section should reuse the same CourseCard component or a smaller reusable learning card component.
+Concepts to Practice
+• React filter()
+• Reusable components
+• Grid or Flexbox
+• Responsive design
+
+16. Footer
+Create a responsive footer.
+It should contain:
+• LearnSphere logo/name
+• Short description
+• Navigation links
+• Social media icons
+• Copyright text
+Example:
+© 2026 LearnSphere. All Rights Reserved.
+Responsive Requirement
+Mobile:
+Content should be vertically arranged.
+Desktop:
+Content should be horizontally arranged where appropriate.
+
+17. Responsive Design Requirements
+The application must support multiple screen sizes.
+Students must use Tailwind responsive utilities such as:
+• sm:
+• md:
+• lg:
+• xl:
+The application must be tested at approximately:
+Mobile: 375px
+Tablet: 768px
+Laptop: 1024px
+Large Desktop: 1440px
+The application must not have unwanted horizontal scrolling.
+
+18. Mobile-First Requirement
+The application should follow a mobile-first approach.
+Students should first define the default mobile layout.
+Then enhance the layout for larger screens using responsive prefixes.
+Example concept:
+className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+Students should be able to explain what happens at each screen size.
+
+19. Flexbox Requirement
+Students must use Flexbox in at least three places.
+Recommended areas:
+• Navbar
+• Hero section
+• Filter buttons
+• Footer
+• Icon and text alignment
+Students should be able to explain why Flexbox was selected for those sections.
+
+20. Grid Requirement
+Students must use CSS Grid in at least two places.
+Recommended areas:
+• Statistics cards
+• Course cards
+Students should be able to explain why Grid is better than Flexbox for those sections.
+
+21. Conditional Styling Requirement
+Students must demonstrate conditional Tailwind classes in at least two places.
+Examples:
+1. Active category button
+2. Course status badge
+Optional examples:
+• Selected navigation item
+• Favorite button
+• Completed course card
+
+22. Tailwind Class Management
+Students should keep Tailwind classes readable and maintainable.
+Avoid unnecessary repeated code.
+Repeated UI elements should be converted into reusable React components.
+Recommended components:
+• Navbar
+• HeroSection
+• StatsCard
+• SearchBar
+• CategoryFilter
+• CourseCard
+• CourseGrid
+• Footer
+Students are free to choose their own project structure as long as the code remains organized.
+
+23. Required Project Structure
+A recommended structure is:
+src/
+│
+├── components/
+│   ├── Navbar.jsx
+│   ├── HeroSection.jsx
+│   ├── StatsCard.jsx
+│   ├── SearchBar.jsx
+│   ├── CategoryFilter.jsx
+│   ├── CourseCard.jsx
+│   ├── CourseGrid.jsx
+│   └── Footer.jsx
+│
+├── data/
+│   └── courses.js
+│
+├── App.jsx
+├── main.jsx
+└── index.css
+Students may improve this structure if needed.
+
+24. Functional Requirements
+The following functionality must work:
+• Search courses by course name
+• Filter courses by category
+• Highlight the selected category
+• Display course status with different colors
+• Display course progress
+• Show only "In Progress" courses in the Continue Learning section
+• Responsive navigation
+• Responsive course cards
+• Responsive statistics cards
+
+25. UI Requirements
+The application should have:
+• Consistent colors
+• Consistent spacing
+• Readable typography
+• Proper alignment
+• Responsive layouts
+• Rounded cards
+• Shadows where appropriate
+• Button hover effects
+• Card hover effects
+• Smooth transitions
+The design does not need to exactly match any existing website.
+Students are encouraged to create their own design.
+
+26. Tailwind CSS Concepts That Must Be Used
+Every student must demonstrate:
+1. Tailwind CSS installation and setup
+2. Tailwind configuration appropriate to the installed version
+3. Verification that Tailwind is working
+4. Custom theme values
+5. Custom fonts
+6. Utility classes
+7. Responsive breakpoints
+8. Mobile-first design
+9. Flexbox
+10. Grid
+11. Understanding of Flexbox vs Grid
+12. Conditional Tailwind classes
+13. Safe handling of class names
+14. Clean and maintainable Tailwind code
+
+27. Project Rules
+Students must follow these rules:
+• Do not use Bootstrap.
+• Do not use Material UI.
+• Do not copy a complete project from the internet.
+• Do not use a ready-made dashboard template.
+• Do not use inline CSS for normal UI styling.
+• Use Tailwind CSS for the main styling.
+• Use reusable React components.
+• The website must be responsive.
+• The project must run without console errors.
+• The student must understand and explain the code during the demo.
+Using AI for learning and debugging is allowed only if the student understands the final implementation and can explain or modify it during the demo.
+
+28. Expected Final Output
+The final application should contain the following flow:
+Navbar
+   ↓
+Hero / Welcome Section
+   ↓
+Learning Statistics
+   ↓
+Continue Learning
+   ↓
+Search Courses
+   ↓
+Category Filters
+   ↓
+Responsive Course Grid
+   ↓
+Footer
+
+29. Submission Requirements
+Students must submit:
+• Complete source code
+• GitHub repository link
+• README file with setup instructions
+• Screenshots of the application
+• Working application on their local system
+Optional bonus:
+Deploy the application using Vercel or Netlify and submit the live URL.
+
+30. Tomorrow's Demo Requirements
+Each student must demonstrate the application and explain the following:
+• How Tailwind CSS was installed
+• How Tailwind was verified
+• How responsive design was implemented
+• How mobile-first design works
+• Where Flexbox was used
+• Where Grid was used
+• Why Flexbox was selected in one section
+• Why Grid was selected in another section
+• How conditional classes were implemented
+• How course filtering works
+• How custom fonts were added
+• How the theme was customized
+• How reusable components were created
+The trainer may also ask the student to make a small live change.
+Example tasks:
+Change the course layout from three columns to four columns on large screens.
+Change the navbar layout for mobile.
+Change the active filter button style.
+Add a new course status and style it.
+Change the Hero section from horizontal to vertical.
+The student should be able to make these changes without rebuilding the entire application.
+
+31. Bonus Challenges
+Students who complete the main requirements can attempt the following:
+• Add Dark Mode
+• Add a mobile hamburger menu
+• Add course sorting
+• Add a favorite course feature
+• Add "Show More" functionality
+• Add an empty state when no courses are found
+• Save selected courses using localStorage
+Bonus features are optional. The required Tailwind CSS concepts should be completed first.
+
+Final Goal
+By completing this project, students should demonstrate that they can independently build a modern, responsive React user interface using Tailwind CSS.
+The focus of the project is not only to create a visually attractive application but also to demonstrate a clear understanding of:
+Tailwind utility classes, responsive design, mobile-first development, Flexbox, Grid, theme customization, custom fonts, conditional styling, reusable components, and maintainable frontend code.

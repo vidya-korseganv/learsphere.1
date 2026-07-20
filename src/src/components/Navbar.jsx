@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { FiMenu, FiSearch, FiX } from 'react-icons/fi'
+import NotificationButton from './NotificationButton'
+import useNotifications from '../hooks/useNotifications'
 
 const navItems = ['Home', 'Explore Courses', 'My Learning', 'Profile']
 
@@ -31,6 +33,7 @@ function Navbar() {
           <button className="flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-slate-600 transition hover:border-blue-400 hover:text-blue-600" aria-label="Search courses">
             <FiSearch className="h-4 w-4" />
           </button>
+          <NotificationButton {...useNotifications()} />
           <div className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-900 text-sm font-semibold text-white">
             JS
           </div>

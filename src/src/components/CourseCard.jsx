@@ -1,12 +1,7 @@
 import { FiArrowRight } from 'react-icons/fi'
+import statusStyles from '../constants/statusStyles'
 
-const statusStyles = {
-  Completed: 'bg-green-100 text-green-700',
-  'In Progress': 'bg-yellow-100 text-yellow-700',
-  'Not Started': 'bg-gray-100 text-gray-700',
-}
-
-function CourseCard({ course }) {
+function CourseCard({ course, onViewDetails }) {
   return (
     <article className="flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white shadow-[0_20px_60px_-30px_rgba(15,23,42,0.3)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_25px_70px_-25px_rgba(59,130,246,0.3)]">
       <img src={course.image} alt={course.title} className="h-40 w-full object-cover" />
@@ -36,10 +31,20 @@ function CourseCard({ course }) {
           </div>
         </div>
 
-        <button className="mt-5 inline-flex items-center gap-2 self-start rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-blue-500 hover:text-blue-600">
-          Continue
-          <FiArrowRight className="h-4 w-4" />
-        </button>
+        <div className="mt-5 flex gap-3">
+          <button
+            onClick={() => onViewDetails?.(course)}
+            className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-blue-500 hover:text-blue-600"
+          >
+            View Details
+            <FiArrowRight className="h-4 w-4" />
+          </button>
+
+          <button className="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:border-blue-500 hover:text-blue-600">
+            Continue
+            <FiArrowRight className="h-4 w-4" />
+          </button>
+        </div>
       </div>
     </article>
   )
